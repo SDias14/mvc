@@ -9,8 +9,17 @@ $router = new Router();//instancia a classe Router
  * primeiro parametro : a rota
  * segundo parametro : o controller e a action
  */
-$router->get('/', 'HomeController@index'); //quando a pessoa acessar o site vai chamar o método index
+$router->get('/', 'HomeController@index'); //quando a pessoa acessar o site vai chamar o método index. é a rota de leitura de dados
+
 $router->get('/novo', 'UserController@add'); //quando a pessoa acessar o site vai chamar o método sobre
+
+$router->post('/novo', 'UserController@addAction'); //no mvc nao mandamos a informação pela pagina , mas sim pela url. Aqui criamos uma rota para o metodo addAction. Quando o usuario clicar no botao de adicionar, ele vai chamar o metodo addAction
+
+$router->get('/usuario/{id}/editar', 'UserController@edit'); // rota para o metodo edit no controller UserController. pagina da view para editar o usuario
+
+$router->post('/usuario/{id}/editar', 'UserController@editAction'); // rota para o metodo editAction no controller UserController. modificar o usuario e mandar para o banco de dados. 
+
+$router->get('/usuario/{id}/excluir', 'UserController@del'); // rota para o metodo del no controller UserController
 
 
 
