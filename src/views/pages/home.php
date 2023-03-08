@@ -23,8 +23,13 @@ var_dump($base);
         <td><?php echo $usuario['nome'];?></td>
         <td><?php echo $usuario['email'];?></td>
         <td>
-            <a href="<?php $base;?>usuario/<?=$usuario['id'];?>/editar">[Editar]</a>
-            <a href="<?php $base;?>usuario/<?=$usuario['id'];?>/excluir">[Excluir]</a>
+            <a href="<?php $base;?>usuario/<?=$usuario['id'];?>/editar">
+            <img src="<?php $base;?>assets/img/edit.png" width="20" height="20" alt="Editar" title="Editar"></a>
+
+            <a href="<?php $base;?>usuario/<?=$usuario['id'];?>/excluir" onclick="return confirm('Tem certeza de que quer excluir ?')">
+            <img src="<?php $base;?>assets/img/delete.webp" width="20" height="20" alt="Excluir" title="Excluir">
+        
+        </a>
 
    
     
